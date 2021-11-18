@@ -31,7 +31,7 @@ class EmogrifyViewHelper extends AbstractViewHelper
     public function render()
     {
         $content = $this->renderChildren();
-        $css = $this->arguments['css'];
+        $css = file_get_contents($this->arguments['css']);
         $extractContent = $this->arguments['extractContent'];
 
         $output = EmogrifierUtility::emogrify($content, $css, $extractContent);
