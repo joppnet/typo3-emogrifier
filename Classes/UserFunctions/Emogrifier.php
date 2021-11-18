@@ -29,7 +29,7 @@ class Emogrifier
 
         if (array_key_exists('css', $typoScript) && array_key_exists('css.', $typoScript)) {
             $contentObject = $this->getContentObject();
-            $css = $contentObject->cObjGetSingle($typoScript['css'], $typoScript['css.']);
+            $css = file_get_contents($typoScript['css']);
         }
         $extractContent = (array_key_exists('extractContent', $typoScript) && $typoScript['extractContent']);
 
